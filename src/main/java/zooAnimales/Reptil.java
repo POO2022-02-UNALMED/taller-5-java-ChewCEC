@@ -15,6 +15,55 @@ public class Reptil extends Animal {
 		this.largoCola = largoCola;
 		Reptil.listado.add(this);
 	}
+	
+	public Reptil() {
+		this(null, 0, null, null, null, 0);
+	}
+	
+	public ArrayList<Reptil> getListado() {
+		return Reptil.listado;
+	}
 
+	public void setListado(ArrayList<Reptil> listado) {
+		Reptil.listado = listado;
+	}
 
+	public String getColorEscamas() {
+		return colorEscamas;
+	}
+
+	public void setColorEscamas(String colorEscamas) {
+		this.colorEscamas = colorEscamas;
+	}
+
+	public int getLargoCola() {
+		return largoCola;
+	}
+
+	public void setLargoCola(int largoCola) {
+		this.largoCola = largoCola;
+	}
+
+	public static int cantidadReptiles() {
+		return Reptil.listado.size();
+	}
+	
+	public String movimiento() {
+		return "reptar";
+	}
+	
+	public static Reptil crearIguana(String nombre, int edad, String genero) {
+		Reptil iguana = new Reptil(nombre, edad, "humedal", genero, "verde", 3);
+		iguanas++;
+
+		return iguana;
+	}
+	
+	public static Reptil crearSerpiente(String nombre, int edad, String genero) {
+		Reptil serpiente = new Reptil(nombre, edad, "jungla", genero, "blanco", 1);
+		serpientes++;
+	
+		return serpiente;
+	}
 }
+
