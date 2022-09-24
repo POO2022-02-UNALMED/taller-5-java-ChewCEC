@@ -9,3 +9,7 @@ public class Ave extends Animal{
     public static int halcones;
     public static int aguilas;
     private String colorPlumas;
+
+
+    
+}
