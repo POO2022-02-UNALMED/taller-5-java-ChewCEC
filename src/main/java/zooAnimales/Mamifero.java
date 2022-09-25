@@ -67,6 +67,10 @@ public class Mamifero extends Animal {
 		this.patas = patas;
 	}
 
+	public String movimiento() {
+		return "caminar";
+	}
+
 }
 
 
