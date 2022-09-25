@@ -1,4 +1,6 @@
 package zooAnimales;
+import java.util.ArrayList;
+
 import gestion.Zona;
 
 public class Animal {
@@ -7,7 +9,7 @@ public class Animal {
     private int edad;
     private String habitat;
     private String genero;
-    private Zona zona;
+    private ArrayList<Zona> zona = new ArrayList<Zona>();
 
     public Animal(String nombre, int edad, String habitat, String genero) {
 		this.nombre = nombre;
@@ -74,17 +76,18 @@ public class Animal {
 	}
 	
 	public static String totalPorTipo() {
-		String mensaje = "Mamiferos: " + Mamifero.cantidadMamiferos() + "\n" + "Aves: " + Ave.cantidadAves() + "\n" + "Reptiles: " + Reptil.cantidadReptiles() + "\n" + "Peces: " + Pez.cantidadPeces() + "\n" + "Anfibios: " + Anfibio.cantidadAnfibios();
-		return mensaje;
-
-	}
+        return String.format("Mamiferos: %d\nAves: %d\nReptiles: %d\nPeces: %d\nAnfibios: %d", Mamifero.cantidadMamiferos(), Ave.cantidadAves(), Reptil.cantidadReptiles(), Pez.cantidadPeces(), Anfibio.cantidadAnfibios());
+    }
 	
-	public String toString() {
-		if (zona!=null)
-			return "Mi nombre es " + nombre + ", tengo una edad de " + edad +", habito en " + habitat + " y mi genero es " + genero + ", la zona en la que me ubico es " + zona + ", en el " + zona.get(0).getZoo();
-		else
-			return "Mi nombre es " + nombre + ", tengo una edad de " + edad +", habito en " + habitat + " y mi genero es " + genero;
-
-	}
+	@Override
+    public String toString() {
+        if (zona != null) {
+            return "Mi nombre es " + nombre + ", tengo una edad de " + edad + ", habito en " + habitat + " y mi genero es " + genero +
+                    ", la zona en la que me ubico es " + zona + ", en el " + zona.get(0).getZoo().getNombre();
+        }
+		else{
+            return "Mi nombre es " + nombre + ", tengo una edad de " + edad + ", habito en " + habitat + " y mi genero es " + genero;
+        }
+    }
 
 }

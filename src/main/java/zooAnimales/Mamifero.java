@@ -67,7 +67,6 @@ public class Mamifero extends Animal {
 		this.patas = patas;
 	}
 
-	
 }
 
 
